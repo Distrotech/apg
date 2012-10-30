@@ -39,9 +39,9 @@ USE_SHA = APG_DONOTUSE_SHA
 ##################################################################
 # Directories
 # Install dirs
-INSTALL_PREFIX = /usr/local
+INSTALL_PREFIX = /usr
 APG_BIN_DIR = /bin
-APG_MAN_DIR = /man/man1
+APG_MAN_DIR = /share/man/man1
 APGD_BIN_DIR = /sbin
 APGD_MAN_DIR = /man/man8
 
@@ -111,36 +111,36 @@ strip:
 
 install:
 	if test -x ./apg; then \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_MAN_DIR}; \
-./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apg ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./install-sh -c -m 0444 ./doc/man/apg.1 ${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apg ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./install-sh -c -m 0444 ./doc/man/apg.1 ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
 fi
 	if test -x ./apgd; then \
-./mkinstalldirs ${INSTALL_PREFIX}${APGD_BIN_DIR}; \
-./mkinstalldirs ${INSTALL_PREFIX}${APGD_MAN_DIR}; \
-./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apgd ${INSTALL_PREFIX}${APGD_BIN_DIR}; \
-./install-sh -c -m 0444 ./doc/man/apgd.8 ${INSTALL_PREFIX}${APGD_MAN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APGD_BIN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APGD_MAN_DIR}; \
+./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apgd ${DESTDIR}${INSTALL_PREFIX}${APGD_BIN_DIR}; \
+./install-sh -c -m 0444 ./doc/man/apgd.8 ${DESTDIR}${INSTALL_PREFIX}${APGD_MAN_DIR}; \
 fi
 	if test -x ./apgbfm; then \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_MAN_DIR}; \
-./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apgbfm ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./install-sh -c -m 0444 ./doc/man/apgbfm.1 ${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./install-sh -c -m 0755 -o root -g ${FIND_GROUP} ./apgbfm ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./install-sh -c -m 0444 ./doc/man/apgbfm.1 ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
 fi
 
 install-cygwin:
 	if test -x ./apg.exe; then \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_MAN_DIR}; \
-./install-sh -c -m 0755 ./apg.exe ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./install-sh -c -m 0444 ./doc/man/apg.1 ${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./install-sh -c -m 0755 ./apg.exe ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./install-sh -c -m 0444 ./doc/man/apg.1 ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
 fi
 	if test -x ./apgbfm.exe; then \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./mkinstalldirs ${INSTALL_PREFIX}${APG_MAN_DIR}; \
-./install-sh -c -m 0755 ./apgbfm.exe ${INSTALL_PREFIX}${APG_BIN_DIR}; \
-./install-sh -c -m 0444 ./doc/man/apgbfm.1 ${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./mkinstalldirs ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
+./install-sh -c -m 0755 ./apgbfm.exe ${DESTDIR}${INSTALL_PREFIX}${APG_BIN_DIR}; \
+./install-sh -c -m 0444 ./doc/man/apgbfm.1 ${DESTDIR}${INSTALL_PREFIX}${APG_MAN_DIR}; \
 fi
 
 clean:
