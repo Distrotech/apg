@@ -43,7 +43,7 @@ INSTALL_PREFIX = /usr
 APG_BIN_DIR = /bin
 APG_MAN_DIR = /share/man/man1
 APGD_BIN_DIR = /sbin
-APGD_MAN_DIR = /man/man8
+APGD_MAN_DIR = /share/man/man8
 
 ####################################################################
 # If you plan to install APG daemon you should look at lines below #
